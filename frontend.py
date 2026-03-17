@@ -23,7 +23,7 @@ def get_headers():
 
 
 def login_page():
-    st.title("🚀 Welcome to Rico's Simple MediaHub")
+    st.title("🚀 Welcome to Rico's MediaHub-FastAPI")
 
     # Simple form with two buttons
     email = st.text_input("Email:")

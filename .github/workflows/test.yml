@@ -12,6 +12,9 @@ jobs:
     env:
       DATABASE_URL: sqlite+aiosqlite:///./test.db
       SECRET_KEY: testsecret
+      IMAGEKIT_PRIVATE_KEY: dummy
+      IMAGEKIT_PUBLIC_KEY: dummy
+      IMAGEKIT_URL_ENDPOINT: dummy
 
     steps:
       - name: Checkout repository

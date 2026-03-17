@@ -4,7 +4,7 @@ from app.db import Post, create_db_and_tables, get_async_session, User
 from sqlalchemy.ext.asyncio import AsyncSession
 from contextlib import asynccontextmanager
 from sqlalchemy import select
-from app.images import imagekit
+from app.images import get_imagekit
 import shutil
 import os
 import tempfile
@@ -62,6 +62,7 @@ async def upload_file(
             temp_file_path = temp_file.name
             shutil.copyfileobj(file.file, temp_file)
         
+        imagekit = get_imagekit()
         with open(temp_file_path, "rb") as f:
             upload_result = imagekit.files.upload(
                 file=f,

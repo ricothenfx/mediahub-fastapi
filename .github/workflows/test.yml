@@ -1,0 +1,47 @@
+name: CI - MediaHub Backend
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    env:
+      DATABASE_URL: sqlite+aiosqlite:///./test.db
+      SECRET_KEY: testsecret
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v3
+
+      # 🔥 Cache uv dependencies (biar cepat)
+      - name: Cache uv
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/uv
+          key: ${{ runner.os }}-uv-${{ hashFiles('**/uv.lock') }}
+
+      - name: Install dependencies
+        run: |
+          uv sync
+
+      # 🔥 Linting
+      - name: Run linter
+        run: |
+          uv run ruff check .
+
+      # 🔥 Run tests + coverage
+      - name: Run tests
+        run: |
+          PYTHONPATH=. uv run pytest --cov=app --cov-report=term-missing --cov-fail-under=70

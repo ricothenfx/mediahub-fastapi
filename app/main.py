@@ -71,7 +71,7 @@ async def upload_file(
             )
 
         post = Post(
-            user_id=str(user.id),
+            user_id=user.id,
             caption=caption,
             url=upload_result.url,
             file_type="video" if file.content_type.startswith("video/") else "image",

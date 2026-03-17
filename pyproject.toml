@@ -1,0 +1,17 @@
+[project]
+name = "mediahub-fastapi"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "aiosqlite>=0.22.1",
+    "fastapi>=0.135.1",
+    "fastapi-users[sqlalchemy]>=15.0.4",
+    "imagekitio>=5.2.0",
+    "python-dotenv>=1.2.2",
+    "requests>=2.32.5",
+    "streamlit>=1.55.0",
+    "urllib3==1.26.18",
+    "uvicorn[standard]>=0.41.0",
+]

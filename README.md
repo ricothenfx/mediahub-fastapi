@@ -2,6 +2,7 @@
 ![FastAPI](https://img.shields.io/badge/FastAPI-async-green)
 ![Status](https://img.shields.io/badge/status-live-success)
 ![Tests](https://img.shields.io/badge/tests-passing-brightgreen)
+![CI](https://github.com/USERNAME/REPO/actions/workflows/test.yml/badge.svg)
 
 # 🚀 MediaHub — Fullstack Media Sharing App
 

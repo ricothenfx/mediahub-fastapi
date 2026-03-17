@@ -18,3 +18,10 @@ dependencies = [
     "urllib3==1.26.18",
     "uvicorn[standard]>=0.41.0",
 ]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.2",
+    "pytest-cov>=7.0.0",
+    "ruff>=0.15.6",
+]

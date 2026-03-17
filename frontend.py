@@ -108,7 +108,6 @@ def create_transformed_url(original_url, transformation_params, caption=None):
 
     parts = original_url.split("/")
 
-    imagekit_id = parts[3]
     file_path = "/".join(parts[4:])
     base_url = "/".join(parts[:4])
     return f"{base_url}/tr:{transformation_params}/{file_path}"

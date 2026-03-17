@@ -4,7 +4,7 @@ import requests
 import base64
 import urllib.parse
 
-API_URL = os.getenv("API_URL", "https://mediahub-fastapi-production.up.railway.app/")
+API_URL = os.getenv("API_URL")
 
 st.set_page_config(page_title="Rico's MediaHub", layout="wide")
 
